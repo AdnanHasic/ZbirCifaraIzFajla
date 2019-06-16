@@ -27,6 +27,10 @@ public class ZbirCifaraIzFajla {
 		
 		int sumaBrojeva = 0;
 		
+		double prosjekBrojeva = 0;
+		
+		int brojacBrojeva = 0;
+		
 		Path putanja = Paths.get(imeFajla.concat(".txt"));
 
         try(Scanner  unos = new Scanner(putanja)) {	
@@ -35,6 +39,8 @@ public class ZbirCifaraIzFajla {
 			
 			sumaBrojeva += unos.nextInt();
 			
+			brojacBrojeva++;
+			
         	}
 		} catch (IOException e) {
 			
@@ -42,6 +48,8 @@ public class ZbirCifaraIzFajla {
 		}
         
         System.out.println("Suma svih broeva u fajlu je  : " + sumaBrojeva);
+        
+        System.out.println("Prosjek iscitanih brojeva je : " + ((double)sumaBrojeva / brojacBrojeva));
 
 	}
 
